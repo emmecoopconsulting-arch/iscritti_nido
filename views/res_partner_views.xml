@@ -8,7 +8,6 @@
         <field name="nome"/>
         <field name="cognome"/>
         <field name="codice_fiscale"/>
-        <field name="iscrizione_state"/>
       </list>
     </field>
   </record>
