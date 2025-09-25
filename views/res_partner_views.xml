@@ -7,12 +7,8 @@
       <list string="Iscritti" editable="bottom">
         <field name="nome"/>
         <field name="cognome"/>
-        <field name="data_nascita"/>
-        <field name="comune_nascita"/>
         <field name="codice_fiscale"/>
-        <field name="protocollo_iscrizione"/>
-        <field name="iscrizione_pdf" filename="iscrizione_filename"/>
-        <field name="iscrizione_filename"/>
+        <field name="iscrizione_state"/>
       </list>
     </field>
   </record>
@@ -35,6 +31,7 @@
               <field name="comune_nascita"/>
               <field name="codice_fiscale"/>
               <field name="protocollo_iscrizione"/>
+              <field name="iscrizione_state"/>
               <field name="iscrizione_pdf" filename="iscrizione_filename"/>
               <field name="iscrizione_filename"/>
             </group>
