@@ -15,7 +15,7 @@ class PbNidoIscritto(models.Model):
     )
     nome = fields.Char("Nome", required=True)
     cognome = fields.Char("Cognome", required=True)
-    data_nascita = fields.Date("Data di nascita", required=True)
+    data_nascita = fields.Date("Data di nascita")  # niente required=True
     comune_nascita = fields.Char("Comune di nascita")
     codice_fiscale = fields.Char("Codice Fiscale", size=16, help="16 caratteri")
     protocollo_iscrizione = fields.Char("Protocollo iscrizione")
