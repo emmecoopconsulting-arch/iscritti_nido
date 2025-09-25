@@ -1,0 +1,56 @@
+<odoo>
+  <!-- LIST del modello figlio -->
+  <record id="view_pb_nido_iscritto_list" model="ir.ui.view">
+    <field name="name">pb.nido.iscritto.list</field>
+    <field name="model">pb.nido.iscritto</field>
+    <field name="arch" type="xml">
+      <list string="Iscritti" editable="bottom">
+        <field name="nome"/>
+        <field name="cognome"/>
+        <field name="data_nascita"/>
+        <field name="comune_nascita"/>
+        <field name="codice_fiscale"/>
+        <field name="protocollo_iscrizione"/>
+      </list>
+    </field>
+  </record>
+
+  <!-- FORM del modello figlio -->
+  <record id="view_pb_nido_iscritto_form" model="ir.ui.view">
+    <field name="name">pb.nido.iscritto.form</field>
+    <field name="model">pb.nido.iscritto</field>
+    <field name="arch" type="xml">
+      <form string="Iscritto">
+        <sheet>
+          <group>
+            <group>
+              <field name="parent_id" readonly="1"/>
+              <field name="nome"/>
+              <field name="cognome"/>
+              <field name="data_nascita"/>
+            </group>
+            <group>
+              <field name="comune_nascita"/>
+              <field name="codice_fiscale"/>
+              <field name="protocollo_iscrizione"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Iniezione pagina nel partner (solo utenti interni) -->
+  <record id="view_partner_form_inherit_nido" model="ir.ui.view">
+    <field name="name">res.partner.form.nido.iscritti</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//form/sheet/notebook" position="inside">
+        <page string="Asilo Nido" name="pb_tab_asilo_nido" groups="base.group_user">
+          <field name="nido_iscritto_ids" mode="list,form"/>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>
