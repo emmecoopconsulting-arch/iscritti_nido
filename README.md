@@ -11,6 +11,7 @@ Aggiunge nella scheda **Contatti (res.partner)** una tab **“Asilo Nido”** co
   - **Comune di nascita**
   - **Codice Fiscale** (check lunghezza 16)
   - **Protocollo iscrizione**
+  - **Stato iscrizione** (pre-iscrizione, iscritto, ritirato)
   - **File PDF dell'iscrizione**
 - Tab dedicata in form partner con tree inline editabile + form
 

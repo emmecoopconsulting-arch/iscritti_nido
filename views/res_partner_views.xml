@@ -1,23 +1,18 @@
 <odoo>
-  <!-- LIST del modello figlio -->
+  <!-- LIST riassuntiva (senza editable, click su riga apre FORM) -->
   <record id="view_pb_nido_iscritto_list" model="ir.ui.view">
     <field name="name">pb.nido.iscritto.list</field>
     <field name="model">pb.nido.iscritto</field>
     <field name="arch" type="xml">
-      <list string="Iscritti" editable="bottom">
-        <field name="nome"/>
+      <list string="Iscritti">
         <field name="cognome"/>
-        <field name="data_nascita"/>
-        <field name="comune_nascita"/>
-        <field name="codice_fiscale"/>
+        <field name="nome"/>
         <field name="protocollo_iscrizione"/>
-        <field name="iscrizione_pdf" filename="iscrizione_filename"/>
-        <field name="iscrizione_filename"/>
       </list>
     </field>
   </record>
 
-  <!-- FORM del modello figlio -->
+  <!-- FORM dettagliato -->
   <record id="view_pb_nido_iscritto_form" model="ir.ui.view">
     <field name="name">pb.nido.iscritto.form</field>
     <field name="model">pb.nido.iscritto</field>
@@ -44,7 +39,7 @@
     </field>
   </record>
 
-  <!-- Iniezione pagina nel partner (solo utenti interni) -->
+  <!-- Iniezione nel partner -->
   <record id="view_partner_form_inherit_nido" model="ir.ui.view">
     <field name="name">res.partner.form.nido.iscritti</field>
     <field name="model">res.partner</field>
@@ -52,7 +47,9 @@
     <field name="arch" type="xml">
       <xpath expr="//form/sheet/notebook" position="inside">
         <page string="Asilo Nido" name="pb_tab_asilo_nido" groups="base.group_user">
-          <field name="nido_iscritto_ids" mode="list,form"/>
+          <field name="nido_iscritto_ids"
+                 mode="list,form"
+                 create_edit="1"/>
         </page>
       </xpath>
     </field>
