@@ -11,6 +11,8 @@
         <field name="comune_nascita"/>
         <field name="codice_fiscale"/>
         <field name="protocollo_iscrizione"/>
+        <field name="iscrizione_pdf" filename="iscrizione_filename"/>
+        <field name="iscrizione_filename"/>
       </list>
     </field>
   </record>
