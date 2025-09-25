@@ -19,6 +19,8 @@ class PbNidoIscritto(models.Model):
     comune_nascita = fields.Char("Comune di nascita")
     codice_fiscale = fields.Char("Codice Fiscale", size=16, help="16 caratteri")
     protocollo_iscrizione = fields.Char("Protocollo iscrizione")
+    iscrizione_pdf = fields.Binary("Iscrizione (PDF)", attachment=True)
+    iscrizione_filename = fields.Char("Nome file")
 
     _sql_constraints = [
         ('cf_len_16',
